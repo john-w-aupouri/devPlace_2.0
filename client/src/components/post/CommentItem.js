@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { deleteComment } from '../../actions/post';
+import { deleteComment } from '../../redux/actions/post';
 import formatDate from '../../utils/formatDate';
 
 const CommentItem = ({

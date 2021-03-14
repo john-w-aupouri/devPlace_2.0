@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getGithubRepos } from '../../actions/profile';
+import { getGithubRepos } from '../../redux/actions/profile';
 
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   useEffect(() => {
