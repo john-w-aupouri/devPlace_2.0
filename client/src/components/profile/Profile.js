@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
@@ -21,21 +21,21 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <Link to="/profiles" className="btn btn-light">
+          <Link to='/profiles' className='btn btn-light'>
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
-              <Link to="/edit-profile" className="btn btn-dark">
+              <Link to='/edit-profile' className='btn btn-dark'>
                 Edit Profile
               </Link>
             )}
-          <div className="profile-grid my-1">
+          <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
-            <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Experience</h2>
+            <div className='profile-exp bg-white p-2'>
+              <h2 className='text-primary'>Experience</h2>
               {profile.experience.length > 0 ? (
                 <Fragment>
                   {profile.experience.map((experience) => (
@@ -50,8 +50,8 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
               )}
             </div>
 
-            <div className="profile-edu bg-white p-2">
-              <h2 className="text-primary">Education</h2>
+            <div className='profile-edu bg-white p-2'>
+              <h2 className='text-primary'>Education</h2>
               {profile.education.length > 0 ? (
                 <Fragment>
                   {profile.education.map((education) => (
