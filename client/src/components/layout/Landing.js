@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
