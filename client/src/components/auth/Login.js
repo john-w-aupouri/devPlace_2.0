@@ -53,7 +53,7 @@ const Login = ({ login, isAuthenticated }) => {
         </div>
         <input type='submit' className='btn btn-primary' value='Login' />
       </form>
-      <p className='my-1'>
+      <p className='my-1-auth-btn'>
         Don't have an account?{' '}
         <Link className='btn btn-primary' to='/register'>
           Register now
