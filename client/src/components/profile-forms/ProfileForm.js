@@ -74,7 +74,7 @@ const ProfileForm = ({
       <p className='lead'>
         <i className='fas fa-user' /> Add some changes to your profile
       </p>
-      <small>* = required field</small>
+
       <form className='form' onSubmit={onSubmit}>
         <div className='form-group'>
           <select name='status' value={status} onChange={onChange}>
@@ -170,7 +170,7 @@ const ProfileForm = ({
             className='btn btn-light'>
             Add Social Network Links
           </button>
-          <span>Optional</span>
+          <span style={{ color: 'yellow' }}>Optional</span>
         </div>
 
         {displaySocialInputs && (
