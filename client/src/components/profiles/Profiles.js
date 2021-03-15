@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import ProfileItem from './ProfileItem';
-import { getProfiles } from '../../actions/profile';
+import { getProfiles } from '../../redux/actions/profile';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -16,14 +16,10 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary'>Developers</h1>
-          <p className='lead'>
-            <i className='fab fa-connectdevelop' /> Browse and connect with
-            developers
-          </p>
+          <h1 className='large text-primary'>Dev's onboard</h1>
           <div className='profiles'>
             {profiles.length > 0 ? (
-              profiles.map(profile => (
+              profiles.map((profile) => (
                 <ProfileItem key={profile._id} profile={profile} />
               ))
             ) : (
@@ -41,11 +37,8 @@ Profiles.propTypes = {
   profile: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   profile: state.profile
 });
 
-export default connect(
-  mapStateToProps,
-  { getProfiles }
-)(Profiles);
+export default connect(mapStateToProps, { getProfiles })(Profiles);
